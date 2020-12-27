@@ -152,8 +152,38 @@
 # if __name__ == '__main__':
 #   fire.Fire(BinaryCanvas)
 
-# Even Simpler
+# # Even Simpler >>>
+# import fire
+# english = 'Hello World'
+# spanish = 'Hola Mundo'
+# fire.Fire()
+
+# # Calling Functions >>>
+# import fire
+
+# class Building(object):
+
+#   def __init__(self, name, stories=1):
+#     self.name = name
+#     self.stories = stories
+
+#   def climb_stairs(self, stairs_per_story=10):
+#     for story in range(self.stories):
+#       for stair in range(1, stairs_per_story):
+#         yield stair
+#       yield 'Phew!'
+#     yield 'Done!'
+
+# if __name__ == '__main__':
+#   fire.Fire(Building)
+
+# Functions with *varargs and **kwargs >>>
 import fire
-english = 'Hello World'
-spanish = 'Hola Mundo'
-fire.Fire()
+
+def order_by_length(*items):
+  """Orders items by length, breaking ties alphabetically."""
+  sorted_items = sorted(items, key=lambda item: (len(str(item)), str(item)))
+  return ' '.join(sorted_items)
+
+if __name__ == '__main__':
+  fire.Fire(order_by_length)

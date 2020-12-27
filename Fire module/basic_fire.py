@@ -71,30 +71,89 @@
 # if __name__ == '__main__':
 #   fire.Fire(BrokenCalculator)
 
-# >>> Grouping Commands <<<
-import fire
-class IngestionStage(object):
+# # >>> Grouping Commands <<<
+# import fire
+# class IngestionStage(object):
     
-  def run(self):
-    return 'Ingesting! Nom nom nom...'
+#   def run(self):
+#     return 'Ingesting! Nom nom nom...'
 
-class DigestionStage(object):
+# class DigestionStage(object):
 
-  def run(self, volume=1):
-    return ' '.join(['Burp!'] * volume)
+#   def run(self, volume=1):
+#     return ' '.join(['Burp!'] * volume)
 
-  def status(self):
-    return 'Satiated.'
+#   def status(self):
+#     return 'Satiated.'
 
-class Pipeline(object):
+# class Pipeline(object):
 
-  def __init__(self):
-    self.ingestion = IngestionStage()
-    self.digestion = DigestionStage()
+#   def __init__(self):
+#     self.ingestion = IngestionStage()
+#     self.digestion = DigestionStage()
 
-  def run(self):
-    self.ingestion.run()
-    self.digestion.run()
+#   def run(self):
+#     self.ingestion.run()
+#     self.digestion.run()
 
-if __name__ == '__main__':
-  fire.Fire(Pipeline)
+# if __name__ == '__main__':
+#   fire.Fire(Pipeline)
+
+# # Accessing Properties >>> 
+
+# from airports import airports
+
+# import fire
+
+# class airport(object):
+
+#   def __init__(self, code):
+#     self.code = code
+#     self.name = dict(airports).get(self.code)
+#     self.city = self.name.split(',')[0] if self.name else None
+
+# if __name__ == '__main__':
+#   fire.Fire(Airport)
+
+# # Chaining Function Calls
+# import fire
+
+# class BinaryCanvas(object):
+#   """A canvas with which to make binary art, one bit at a time."""
+
+#   def __init__(self, size=10):
+#     self.pixels = [[0] * size for _ in range(size)]
+#     self._size = size
+#     self._row = 0  # The row of the cursor.
+#     self._col = 0  # The column of the cursor.
+
+#   def __str__(self):
+#     return '\n'.join(' '.join(str(pixel) for pixel in row) for row in self.pixels)
+
+#   def show(self):
+#     print(self)
+#     return self
+
+#   def move(self, row, col):
+#     self._row = row % self._size
+#     self._col = col % self._size
+#     return self
+
+#   def on(self):
+#     return self.set(1)
+
+#   def off(self):
+#     return self.set(0)
+
+#   def set(self, value):
+#     self.pixels[self._row][self._col] = value
+#     return self
+
+# if __name__ == '__main__':
+#   fire.Fire(BinaryCanvas)
+
+# Even Simpler
+import fire
+english = 'Hello World'
+spanish = 'Hola Mundo'
+fire.Fire()

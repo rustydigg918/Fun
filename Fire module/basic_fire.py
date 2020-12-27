@@ -54,19 +54,47 @@
 # if __name__ == '__main__':
 #   fire.Fire(Calculator)
 
-# >>> Broken Calculator <<<
+# # >>> Broken Calculator <<<
+# import fire
+
+# class BrokenCalculator(object):
+
+#   def __init__(self, offset=1):
+#       self._offset = offset
+
+#   def add(self, x, y):
+#     return x + y + self._offset
+
+#   def multiply(self, x, y):
+#     return x * y + self._offset
+
+# if __name__ == '__main__':
+#   fire.Fire(BrokenCalculator)
+
+# >>> Grouping Commands <<<
 import fire
+class IngestionStage(object):
+    
+  def run(self):
+    return 'Ingesting! Nom nom nom...'
 
-class BrokenCalculator(object):
+class DigestionStage(object):
 
-  def __init__(self, offset=1):
-      self._offset = offset
+  def run(self, volume=1):
+    return ' '.join(['Burp!'] * volume)
 
-  def add(self, x, y):
-    return x + y + self._offset
+  def status(self):
+    return 'Satiated.'
 
-  def multiply(self, x, y):
-    return x * y + self._offset
+class Pipeline(object):
+
+  def __init__(self):
+    self.ingestion = IngestionStage()
+    self.digestion = DigestionStage()
+
+  def run(self):
+    self.ingestion.run()
+    self.digestion.run()
 
 if __name__ == '__main__':
-  fire.Fire(BrokenCalculator)
+  fire.Fire(Pipeline)

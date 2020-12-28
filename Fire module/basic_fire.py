@@ -177,13 +177,13 @@
 # if __name__ == '__main__':
 #   fire.Fire(Building)
 
-# Functions with *varargs and **kwargs >>>
-import fire
+# # Functions with *varargs and **kwargs >>>
+# import fire
 
-def order_by_length(*items):
-  """Orders items by length, breaking ties alphabetically."""
-  sorted_items = sorted(items, key=lambda item: (len(str(item)), str(item)))
-  return ' '.join(sorted_items)
+# def order_by_length(*items):
+#   """Orders items by length, breaking ties alphabetically."""
+#   sorted_items = sorted(items, key=lambda item: (len(str(item)), str(item)))
+#   return ' '.join(sorted_items)
 
-if __name__ == '__main__':
-  fire.Fire(order_by_length)
+# if __name__ == '__main__':
+#   fire.Fire(order_by_length)

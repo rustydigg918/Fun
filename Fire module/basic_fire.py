@@ -187,3 +187,8 @@
 
 # if __name__ == '__main__':
 #   fire.Fire(order_by_length)
+
+# # Argument Parsing
+# import fire
+# fire.Fire(lambda obj: type(obj).__name__)
+

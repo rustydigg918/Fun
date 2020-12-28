@@ -192,3 +192,13 @@
 # import fire
 # fire.Fire(lambda obj: type(obj).__name__)
 
+# Using the fire CLI >>>>
+## Calling a function>>>
+import fire
+def double(value=0):
+      return 2 * value
+
+if __name__ == '__main__':
+      fire.Fire(double)
+
+

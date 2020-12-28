@@ -206,7 +206,11 @@
 
 # --separator: Changing the separator 
 # Here's the Python function
+import fire
 def display(arg1, arg2='!'):
   return arg1 + arg2
+
+if __name__=='__main__':
+      fire.Fire(display)
 
 

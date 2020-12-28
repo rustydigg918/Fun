@@ -192,13 +192,21 @@
 # import fire
 # fire.Fire(lambda obj: type(obj).__name__)
 
-# Using the fire CLI >>>>
-## Calling a function>>>
-import fire
-def double(value=0):
-      return 2 * value
 
-if __name__ == '__main__':
-      fire.Fire(double)
+
+# Using the fire CLI >>>>
+
+# ## Calling a function>>>
+# import fire
+# def double(value=0):
+#       return 2 * value
+
+# if __name__ == '__main__':
+#       fire.Fire(double)
+
+# --separator: Changing the separator 
+# Here's the Python function
+def display(arg1, arg2='!'):
+  return arg1 + arg2
 
 

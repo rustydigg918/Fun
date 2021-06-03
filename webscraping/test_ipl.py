@@ -20,5 +20,3 @@ headers = {
 response = requests.get(url, headers=headers)
 
 player_data = response.json()
-# df = pd.json_normalize(player_data)
-print(player_data.jsonify())
